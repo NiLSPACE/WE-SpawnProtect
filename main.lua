@@ -1,3 +1,4 @@
+--[[Created by STR_Warrior]]--
 a_Worlds = {}
 
 function Initialize(Plugin)
@@ -57,10 +58,10 @@ function OnWorldStarted(World)
 end
 
 function SpawnProtect(a_MinX, a_MaxX, a_MinY, a_MaxY, a_MinZ, a_MaxZ, a_Player, a_World, a_Operation)
-	
 	if a_Player:HasPermission("we-spawnprotect.build") then
 		return false
 	end
+	
 	local WorldName = a_World:GetName()
 	local Cuboid = cCuboid(a_Worlds[WorldName].MinX, a_Worlds[WorldName].MinY, a_Worlds[WorldName].MinZ, a_Worlds[WorldName].MaxX, a_Worlds[WorldName].MaxY, a_Worlds[WorldName].MaxZ)
 	if Cuboid:DoesIntersect(cCuboid(a_MinX, a_MinY, a_MinZ, a_MaxX, a_MaxY, a_MaxZ)) then
