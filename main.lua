@@ -46,7 +46,7 @@ function HookWorld(a_WorldName)
 	
 	-- If the world hasn't been hooked yet, hook it
 	if not(g_Worlds[a_WorldName].IsHooked) then
-		g_Worlds[a_WorldName].IsHooked = cPluginManager:CallPlugin("WorldEdit", "RegisterCallback", cPluginManager:GetCurrentPlugin():GetName(), "WorldEditCallback", a_WorldName)
+		g_Worlds[a_WorldName].IsHooked = cPluginManager:CallPlugin("WorldEdit", "RegisterAreaCallback", cPluginManager:GetCurrentPlugin():GetName(), "WorldEditCallback", a_WorldName)
 		-- Display a log message to the admin if the world is protected
 		if (g_Worlds[a_WorldName].IsHooked) then
 			LOGINFO("WE-SpawnProtect is protecting world " .. a_WorldName)
